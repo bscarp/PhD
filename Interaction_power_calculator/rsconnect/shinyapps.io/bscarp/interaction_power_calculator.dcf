@@ -1,0 +1,11 @@
+name: interaction_power_calculator
+title:
+username:
+account: bscarp
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8100499
+bundleId: 8129180
+url: https://bscarp.shinyapps.io/interaction_power_calculator/
+asMultiple: FALSE
+asStatic: FALSE
