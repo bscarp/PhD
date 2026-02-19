@@ -9,6 +9,9 @@
 
 library(shiny)
 library(shinyjs)
+# library(pwr)
+# library(MESS)
+# library(powerSurvEpi)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(

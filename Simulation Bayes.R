@@ -18,7 +18,7 @@ plan(multisession, workers = 7)
 # }
 
 tidy.BF = function(data, quantile = c(0.005)) {
-  temp = BayesFactor::posterior(data[4], iterations = 10000)
+  temp = BayesFactor::posterior(data,4, iterations = 10000)
   broom.mixed::tidy(temp, conf.int = TRUE, conf.level = 0.99) |> dplyr::mutate(term = c("Intercept", "X", "Z", "Z:X", "sig2", "g"))
 }
 
@@ -51,6 +51,6 @@ bay_test = bay_mod |> redesign(N = c(60,100,200,400,800,1600,3200), g = c(1, 2, 
 bay_test$diagnosands_df %>% filter(inquiry=="diff_in_CATEs") %>% arrange(N, desc(estimator), g)
 
 ## Archiving
-save(bay_test,bay_mod,file = "./Bayes.RData",compress = "xz")
-rm(bay_test,bay_mod)
-load(file = "./Bayes.RData")
+save(bay_test,bay_mod,file = "./Bayes2.RData",compress = "xz")
+rm(bay_test,bay_mod,tidy.BF,g,N)
+load(file = "./Bayes2.RData")
